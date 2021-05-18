@@ -19,12 +19,3 @@ export interface Street {
   periode: string;
 }
 
-declare global {
-  interface String {
-    insert(text: string, position: number): string;
-  }
-}
-
-String.prototype.insert = function(text: string, position: number) {
-  return String(this).substring(0, position) + text + String(this).substring(position)
-}
